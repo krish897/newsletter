@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>News letter</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+</head>
+<style>
+    *{
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+    }
+    .container{
+        height: 100vh;
+        background-color: rgb(45, 41, 41);
+        padding-left: 350px;
+        padding-top: 100px;
+    }
+    .box{
+        height: 430px;
+        width: 75%;
+        border: 2px solid white;
+        border-radius: 10px;
+        background-color: white;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+    }
+    .left{
+        width: 50%;
+    }
+    .right{
+        width: 50%;
+    }
+    p{
+        font-size: small;
+        padding-left: 30px;
+        padding-top: 10px;
+    }
+    #logo{
+        color: orange;
+        padding-right: 8px;
+    }
+    .info{
+        font-size: small;
+        padding-left: 30px;
+        padding-top: 20px;
+    }
+    .info1{
+        font-size: small;
+        padding-left: 30px;
+        padding-top: 10px;
+    }
+    .text{
+        padding-left: 30px;
+        padding-top: 30px;
+    }
+    #name{
+        height: 40px;
+        width: 75%;
+        border-radius: 10px;
+    }
+    #label{
+        font-size: small;
+    }
+    button{
+        height: 40px;
+        width: 75%;
+        background-color: rgb(24, 24, 27);
+        color: white;
+        border-radius: 10px;
+    }
+    .img{
+        height: 420px;
+        margin-top: 4px;
+        border-radius: 10px;
+    }
+    .length{
+        padding-left: 50px;
+    }
+</style>
+<body>
+    <div class="container">
+        <div class="box">
+            <div class="left">
+                <h1 style="padding-left: 30px; padding-top: 50px; letter-spacing: 5px;">Stay updated!</h1>
+                <p>Join 60,000+ products managers receiving monthly<br>updates on:</p>
+                <h3 class="info"><i class="bi bi-check-circle-fill" id="logo"></i>discovery and building what matters</h3>
+                <h3 class="info1"><i class="bi bi-check-circle-fill" id="logo"></i>Measuring to ensure updates are a success</h3>
+                <h3 class="info1"><i class="bi bi-check-circle-fill" id="logo"></i>And much more!</h3>
+                <form class="text" onsubmit="validateEmail(event)">
+                    <label for="name" id="label"> Email addresss</label>
+                    <br>
+                    <input type="email" id="name"  placeholder="email@company.com" autocomplete="email">
+                    <br>
+                    <br>
+                    <button onclick="validateEmail()">Subscribe to monthly news letter</button>
+                </form>
+            </div>
+            <div class="right">
+                <div class="length">
+                    <img src="https://res.cloudinary.com/dswdzotlp/image/upload/v1710961358/Screenshot_2024-03-21_003154_soh7rw.png" class="img">
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <script>
+        function validateEmail(event){
+            event.preventDefault(); 
+            const email = document.getElementById("name").value;
+            const emailpattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if(emailpattern.test(email)){
+                window.location.href="success.html";
+            }else{
+                alert("please enter a valid email!")
+            };
+        };
+    </script>
+</body>
+</html>
